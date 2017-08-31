@@ -1,63 +1,64 @@
 package com.epam.ta.framework.ui.business_objects;
 
-import com.epam.ta.framework.utils.DateUtil;
+public abstract class Item {
+    public abstract String getProjectName();
 
-public class Item {//todo Будут классы, которые унаследуются от данного класса
-    protected String summary;
-    protected String id;
-    protected User creator;
-    protected User actionPerfomer;
-    protected String currency;
-    protected String projectName;
+    public abstract Integer getEstimatedBudget();
 
-    public Item() {
-        this.summary = "Item is created by Selenium " + DateUtil.getSdf(DateUtil.getCurrentDate());
-        this.actionPerfomer = new User();
-        this.currency = "KZT";
-        this.projectName = "ENRC-TRD";
-    }
+    public abstract String getLocationFrom();
 
-    public User getActionPerfomer() {
-        return actionPerfomer;
-    }
+    public abstract String getCountry();
 
-    public void setActionPerfomer(User actionPerfomer) {
-        this.actionPerfomer = actionPerfomer;
-    }
+    public abstract String getDestinationCity();
 
-    public String getSummary() {
-        return summary;
-    }
+    public abstract String getDestinationAddress();
 
-    public String getId() {
-        return id;
-    }
+    public abstract String getDescription();
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public abstract String getPlannedStartDate();
 
-    public User getCreator() {
-        return creator;
-    }
+    public abstract String getPlannedEndDate();
 
-    public void setCreator(User creator) {
-        this.creator = creator;
-    }
+    public abstract String getSummary();
 
-    public String getCurrency() {
-        return currency;
-    }
+//    protected String summary = "Item is created by Selenium " + DateUtil.getSdf(DateUtil.getCurrentDate());
+//    protected String id;
+//    protected User creator;
+//    protected User actionPerfomer = new User();
+////    protected String currency ="KZT";
+//    protected String projectName = "ENRC-TRD";
+////
+//    public String getSummary() {
+//        return summary;
+//    }
+//
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public User getCreator() {
+//        return creator;
+//    }
+//
+//    public User getActionPerfomer() {
+//        return actionPerfomer;
+//    }
+//
+////    public String getCurrency() {
+////        return currency;
+////    }
+//
+//    public String getProjectName() {
+//        return projectName;
+//    }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
 
-    public String getProjectName() {
-        return projectName;
-    }
+    //    public Item() {
+//        this.summary = "Item is created by Selenium " + DateUtil.getSdf(DateUtil.getCurrentDate());
+//        this.actionPerfomer = new User();
+//        this.currency = "KZT";
+//        this.projectName = "ENRC-TRD";
+//    }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
+
 }

@@ -1,6 +1,6 @@
 package com.epam.ta.framework.ui.steps.businesstrip;
 
-import com.epam.ta.framework.ui.business_objects.BusinessTrip;
+import com.epam.ta.framework.ui.business_objects.*;
 import com.epam.ta.framework.ui.pages.businesstrip.BTListPage;
 import com.epam.ta.framework.ui.pages.businesstrip.CreateBTPage;
 import com.epam.ta.framework.ui.steps.BaseStep;
@@ -8,24 +8,25 @@ import com.epam.ta.framework.ui.steps.BaseStep;
 public class BusinessTripStep extends BaseStep {
     private CreateBTPage createBTPage = new CreateBTPage();
     private BTListPage btListPage = new BTListPage();
-    private BusinessTrip businessTripBO = new BusinessTrip();
+    ItemCreator itemCreator = new CTCItemCreator();
+    Item item = itemCreator.createItem("BT");
 
     public BusinessTripStep() {
     }
 
     public void createBT(){
         btListPage.newBtClick();
-        createBTPage.chooseProject(businessTripBO.getProjectName());
+        createBTPage.chooseProject(item.getProjectName());
 //        createBTPage.inputCurrency("KZT");
-        createBTPage.inputEstimatedBudget(businessTripBO.getEstimatedBudget());
-        createBTPage.inputTripFromLocation(businessTripBO.getLocationFrom());
-        createBTPage.inputDestinationCountry(businessTripBO.getCountry());
-        createBTPage.inputDestinationCity(businessTripBO.getDestinationCity());
-        createBTPage.inputDestinationAddress(businessTripBO.getDestinationAddress());
-        createBTPage.inputTripDescription(businessTripBO.getDescription());
-        createBTPage.inputStartDate(businessTripBO.getPlannedStartDate());
-        createBTPage.inputEndDate(businessTripBO.getPlannedEndDate());
-        createBTPage.inputSummary(businessTripBO.getSummary());
+        createBTPage.inputEstimatedBudget(item.getEstimatedBudget());
+        createBTPage.inputTripFromLocation(item.getLocationFrom());
+        createBTPage.inputDestinationCountry(item.getCountry());
+        createBTPage.inputDestinationCity(item.getDestinationCity());
+        createBTPage.inputDestinationAddress(item.getDestinationAddress());
+        createBTPage.inputTripDescription(item.getDescription());
+        createBTPage.inputStartDate(item.getPlannedStartDate());
+        createBTPage.inputEndDate(item.getPlannedEndDate());
+        createBTPage.inputSummary(item.getSummary());
         createBTPage.saveItem();
     }
 

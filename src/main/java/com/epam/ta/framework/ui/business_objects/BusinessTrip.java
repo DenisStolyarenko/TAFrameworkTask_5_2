@@ -5,27 +5,35 @@ import com.epam.ta.framework.utils.DateUtil;
 import java.util.Date;
 
 public class BusinessTrip extends Item {
-    private Integer estimatedBudget;
-    private Date plannedStartDate;
-    private Date plannedEndDate;
-    private String locationFrom;
-    private String country;
-    private String destinationCity;
-    private String destinationAddress;
-    private String description;
+    protected String summary = "Item is created by Selenium " + DateUtil.getSdf(DateUtil.getCurrentDate());
+    protected String id;
+    protected User creator;
+    protected User actionPerfomer = new User();
+    protected String currency ="KZT";
+    protected String projectName = "ENRC-TRD";
 
-    public BusinessTrip() {
-        super();
-        this.estimatedBudget = 200000;
-        this.plannedStartDate = DateUtil.getCurrentDate();
-        this.plannedEndDate = DateUtil.getNextDate();
-        this.locationFrom = "Karaganda";
-        this.country = "Belarus";
-        this.destinationCity = "Minsk";
-        this.destinationAddress = "Minsk, Lenin street";
-        this.description = "Travel to " + destinationCity + " " + DateUtil.getCurrentDate();;
-    }
 
+    private Integer estimatedBudget = 200000;
+    private Date plannedStartDate = DateUtil.getCurrentDate();
+    private Date plannedEndDate = DateUtil.getNextDate();
+    private String locationFrom = "Karaganda";
+    private String country = "Belarus";
+    private String destinationCity = "Minsk";
+    private String destinationAddress = "Minsk, Lenin street";
+    private String description = "Travel to " + destinationCity + " " + DateUtil.getCurrentDate();
+//
+//    public BusinessTrip() {
+//        super();
+//        this.estimatedBudget = 200000;
+//        this.plannedStartDate = DateUtil.getCurrentDate();
+//        this.plannedEndDate = DateUtil.getNextDate();
+//        this.locationFrom = "Karaganda";
+//        this.country = "Belarus";
+//        this.destinationCity = "Minsk";
+//        this.destinationAddress = "Minsk, Lenin street";
+//        this.description = "Travel to " + destinationCity + " " + DateUtil.getCurrentDate();;
+//    }
+//
     public Integer getEstimatedBudget() {
         return estimatedBudget;
     }
@@ -80,5 +88,30 @@ public class BusinessTrip extends Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public User getActionPerfomer() {
+        return actionPerfomer;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public String getProjectName() {
+        return projectName;
     }
 }
