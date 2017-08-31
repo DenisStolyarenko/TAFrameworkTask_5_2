@@ -13,4 +13,5 @@ public abstract class Decorator implements WebElement{
     public void click(){
         component.click();
     }
+
 }

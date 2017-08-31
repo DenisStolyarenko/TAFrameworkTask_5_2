@@ -5,14 +5,6 @@ import com.epam.ta.framework.utils.DateUtil;
 import java.util.Date;
 
 public class BusinessTrip extends Item {
-    protected String summary = "Item is created by Selenium " + DateUtil.getSdf(DateUtil.getCurrentDate());
-    protected String id;
-    protected User creator;
-    protected User actionPerfomer = new User();
-    protected String currency ="KZT";
-    protected String projectName = "ENRC-TRD";
-
-
     private Integer estimatedBudget = 200000;
     private Date plannedStartDate = DateUtil.getCurrentDate();
     private Date plannedEndDate = DateUtil.getNextDate();
@@ -21,19 +13,19 @@ public class BusinessTrip extends Item {
     private String destinationCity = "Minsk";
     private String destinationAddress = "Minsk, Lenin street";
     private String description = "Travel to " + destinationCity + " " + DateUtil.getCurrentDate();
-//
-//    public BusinessTrip() {
-//        super();
-//        this.estimatedBudget = 200000;
-//        this.plannedStartDate = DateUtil.getCurrentDate();
-//        this.plannedEndDate = DateUtil.getNextDate();
-//        this.locationFrom = "Karaganda";
-//        this.country = "Belarus";
-//        this.destinationCity = "Minsk";
-//        this.destinationAddress = "Minsk, Lenin street";
-//        this.description = "Travel to " + destinationCity + " " + DateUtil.getCurrentDate();;
-//    }
-//
+
+    public BusinessTrip() {
+        super();
+        this.estimatedBudget = estimatedBudget;
+        this.plannedStartDate = plannedStartDate;
+        this.plannedEndDate = plannedEndDate;
+        this.locationFrom = locationFrom;
+        this.country = country;
+        this.destinationCity = destinationCity;
+        this.destinationAddress = destinationAddress;
+        this.description = description;
+    }
+
     public Integer getEstimatedBudget() {
         return estimatedBudget;
     }

@@ -2,6 +2,7 @@ package com.epam.ta.framework.ui.pages.general;
 
 import com.epam.ta.framework.ui.driver.Driver;
 import com.epam.ta.framework.ui.pages.AbstractPage;
+import com.epam.ta.framework.utils.Service;
 import com.epam.ta.framework.utils.Waiters;
 import org.openqa.selenium.By;
 
@@ -22,14 +23,14 @@ public class ChooseProjectBlock extends AbstractPage {
     public ChooseProjectBlock searchProjectOrCost(String projectName){
         Waiters.waitForElementVisibleEnabled(SEARCH_INPUT_LOCATOR);
         Driver.getDriverInstance().findElement(SEARCH_INPUT_LOCATOR).sendKeys(projectName);
-        Driver.getDriverInstance().findElement(GO_BUTTON_LOCATOR).click();
-        Driver.getDriverInstance().findElement(By.xpath("//input[@type='checkbox' and @projectcostobjectname='" + projectName + "']")).click();
+        Service.decorate(Driver.getDriverInstance().findElement(GO_BUTTON_LOCATOR)).click();
+        Service.decorate(Driver.getDriverInstance().findElement(By.xpath("//input[@type='checkbox' and @projectcostobjectname='" + projectName + "']"))).click();
         return this;
     }
 
     public ChooseProjectBlock clickByOK (){
         Waiters.waitForElementVisibleEnabled(OK_BUTTON_LOCATOR);
-        Driver.getDriverInstance().findElement(OK_BUTTON_LOCATOR).click();
+        Service.decorate(Driver.getDriverInstance().findElement(OK_BUTTON_LOCATOR)).click();
         return this;
     }
 

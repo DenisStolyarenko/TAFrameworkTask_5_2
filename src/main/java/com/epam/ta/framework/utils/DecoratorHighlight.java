@@ -11,6 +11,7 @@ public class DecoratorHighlight extends Decorator {
 
     @Override
     public void click(){
+        Service.HighlightOfElement(component);
         super.click();
     }
 
@@ -20,7 +21,7 @@ public class DecoratorHighlight extends Decorator {
     }
 
     @Override
-    public void sendKeys(CharSequence... keysToSend) {
+    public void sendKeys(CharSequence... charSequences) {
 
     }
 
@@ -35,7 +36,7 @@ public class DecoratorHighlight extends Decorator {
     }
 
     @Override
-    public String getAttribute(String name) {
+    public String getAttribute(String s) {
         return null;
     }
 
@@ -85,12 +86,12 @@ public class DecoratorHighlight extends Decorator {
     }
 
     @Override
-    public String getCssValue(String propertyName) {
+    public String getCssValue(String s) {
         return null;
     }
 
     @Override
-    public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
+    public <X> X getScreenshotAs(OutputType<X> outputType) throws WebDriverException {
         return null;
     }
 }

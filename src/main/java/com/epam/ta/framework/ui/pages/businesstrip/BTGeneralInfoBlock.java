@@ -3,6 +3,7 @@ package com.epam.ta.framework.ui.pages.businesstrip;
 import com.epam.ta.framework.ui.driver.Driver;
 import com.epam.ta.framework.ui.pages.AbstractPage;
 import com.epam.ta.framework.ui.pages.general.ChooseProjectBlock;
+import com.epam.ta.framework.utils.Service;
 import com.epam.ta.framework.utils.Waiters;
 import org.openqa.selenium.By;
 
@@ -17,13 +18,13 @@ public class BTGeneralInfoBlock extends AbstractPage{
 
     public ChooseProjectBlock chooseProject(){
         Waiters.waitForElementEnabled(CHOOSE_PROJECT_LOCATOR);
-        Driver.getDriverInstance().findElement(CHOOSE_PROJECT_LOCATOR).click();
+        Service.decorate(Driver.getDriverInstance().findElement(CHOOSE_PROJECT_LOCATOR)).click();
         return new ChooseProjectBlock();
     }
 
     public BTGeneralInfoBlock clearProject(){
         Waiters.waitForElementEnabled(CLEAR_PROJECT_LOCATOR);
-        Driver.getDriverInstance().findElement(CLEAR_PROJECT_LOCATOR).click();
+        Service.decorate(Driver.getDriverInstance().findElement(CLEAR_PROJECT_LOCATOR)).click();
         return this;
     }
 

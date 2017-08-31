@@ -3,8 +3,11 @@ package com.epam.ta.framework.ui.pages.login;
 import com.epam.ta.framework.ui.driver.Driver;
 import com.epam.ta.framework.ui.pages.dashboard.DashBoardPage;
 import com.epam.ta.framework.ui.pages.AbstractPage;
+import com.epam.ta.framework.utils.DecoratorHighlight;
+import com.epam.ta.framework.utils.Service;
 import com.epam.ta.framework.utils.Waiters;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends AbstractPage {
 
@@ -16,7 +19,7 @@ public class LoginPage extends AbstractPage {
     public DashBoardPage login(String userName, String pwdName){
         Driver.getDriverInstance().findElement(USER_NAME_INPUT_LOCATOR).sendKeys(userName);
         Driver.getDriverInstance().findElement(PASSWORD_INPUT_LOCATOR).sendKeys(pwdName);
-        Driver.getDriverInstance().findElement(LOGIN_BUTTON_LOCATOR).click();
+        Service.decorate(Driver.getDriverInstance().findElement(LOGIN_BUTTON_LOCATOR)).click();
         return new DashBoardPage();
     }
 
@@ -24,4 +27,5 @@ public class LoginPage extends AbstractPage {
         Waiters.waitForElementVisible(LOGIN_PAGE_TEXT_LOCATOR);
         return Driver.getDriverInstance().findElement(LOGIN_PAGE_TEXT_LOCATOR).getText();
     }
+
 }

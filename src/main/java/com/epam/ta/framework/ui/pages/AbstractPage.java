@@ -1,6 +1,7 @@
 package com.epam.ta.framework.ui.pages;
 
 import com.epam.ta.framework.ui.driver.Driver;
+import com.epam.ta.framework.utils.Service;
 import com.epam.ta.framework.utils.Waiters;
 import org.openqa.selenium.By;
 
@@ -15,7 +16,8 @@ public abstract class AbstractPage {
     public void logout(){
         Waiters.waitForElementVisible(LOGOUT_LOCATOR);
         Waiters.waitForElementEnabled(LOGOUT_LOCATOR);
-        Driver.getDriverInstance().findElement(LOGOUT_LOCATOR).click();
+        Service.decorate(Driver.getDriverInstance().findElement(LOGOUT_LOCATOR)).click();
+//        Driver.getDriverInstance().findElement(LOGOUT_LOCATOR).click();
     }
 
     public void confirmation(){
