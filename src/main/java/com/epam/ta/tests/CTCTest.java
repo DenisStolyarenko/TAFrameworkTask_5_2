@@ -3,7 +3,6 @@ package com.epam.ta.tests;
 import com.epam.ta.framework.ui.driver.Driver;
 import com.epam.ta.framework.ui.steps.BaseStep;
 import com.epam.ta.framework.ui.steps.businesstrip.BusinessTripStep;
-import com.epam.ta.framework.utils.Screenshoter;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Parameters;

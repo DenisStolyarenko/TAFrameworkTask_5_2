@@ -3,11 +3,9 @@ package com.epam.ta.framework.ui.pages.login;
 import com.epam.ta.framework.ui.driver.Driver;
 import com.epam.ta.framework.ui.pages.dashboard.DashBoardPage;
 import com.epam.ta.framework.ui.pages.AbstractPage;
-import com.epam.ta.framework.utils.DecoratorHighlight;
 import com.epam.ta.framework.utils.Service;
 import com.epam.ta.framework.utils.Waiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage extends AbstractPage {
 

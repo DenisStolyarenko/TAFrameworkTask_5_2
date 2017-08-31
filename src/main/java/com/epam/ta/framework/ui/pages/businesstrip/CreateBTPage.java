@@ -63,7 +63,7 @@ public class CreateBTPage extends AbstractPage {
     public void saveItem(){
         Waiters.waitForElementVisibleEnabled(SAVE_BUTTON_LOCATOR);
         String executeString = Driver.getDriverInstance().findElement(SAVE_BUTTON_LOCATOR).getAttribute("onclick");
-        ((JavascriptExecutor)Driver.getDriverInstance()).executeScript(executeString);
+        ((JavascriptExecutor) Driver.getDriverInstance()).executeScript(executeString);
     }
 
     public Integer countBTid(){
