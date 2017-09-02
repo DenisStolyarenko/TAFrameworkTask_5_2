@@ -1,9 +1,9 @@
 package com.epam.ta.framework.ui.application.business_objects;
 
+import com.epam.ta.framework.ui.application.commonconstants.AnyParameters;
 import com.epam.ta.framework.ui.application.enums.ItemType;
 import com.epam.ta.framework.ui.application.enums.Projects;
 import com.epam.ta.framework.ui.application.enums.User;
-import com.epam.ta.framework.ui.application.commonconstants.AnyParameters;
 
 public class BusinessTripFactory {
     public static BusinessTrip createSimpleBusinessTrip(){

@@ -1,7 +1,7 @@
 package com.epam.ta.framework.ui.application.pages.businesstrip;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Service;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
@@ -17,7 +17,7 @@ public class BTListPage extends AbstractPage {
 
     public void newBtClick(){
         Waiters.waitForElementEnabled(CREATE_BUTTON_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(CREATE_BUTTON_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(CREATE_BUTTON_LOCATOR).click();
     }
 
     public String readListName(){

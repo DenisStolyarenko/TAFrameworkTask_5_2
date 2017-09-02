@@ -1,8 +1,7 @@
 package com.epam.ta.framework.ui.application.pages.login;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
-import com.epam.ta.framework.ui.core.utils.Service;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
 
@@ -16,7 +15,7 @@ public class LoginPage extends AbstractPage {
     public void login(String userName, String pwdName){
         Driver.getDriverInstance().findElement(USER_NAME_INPUT_LOCATOR).sendKeys(userName);
         Driver.getDriverInstance().findElement(PASSWORD_INPUT_LOCATOR).sendKeys(pwdName);
-        Service.decorate(Driver.getDriverInstance().findElement(LOGIN_BUTTON_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(LOGIN_BUTTON_LOCATOR).click();
     }
 
     public String readIntroductionText(){

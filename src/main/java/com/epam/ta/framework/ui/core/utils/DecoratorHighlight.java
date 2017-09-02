@@ -9,6 +9,7 @@ public class DecoratorHighlight extends Decorator {
         super(c);
     }
 
+
     @Override
     public void click(){
         Service.HighlightOfElement(component);

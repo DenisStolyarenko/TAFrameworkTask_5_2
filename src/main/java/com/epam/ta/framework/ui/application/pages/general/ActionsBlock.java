@@ -1,9 +1,8 @@
 package com.epam.ta.framework.ui.application.pages.general;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.DateUtil;
-import com.epam.ta.framework.ui.core.utils.Service;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
 
@@ -19,13 +18,13 @@ public class ActionsBlock extends AbstractPage {
 
     public void clickSubmit() {
         Waiters.waitForElementPresent(SUBMIT_BUTTON_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(SUBMIT_BUTTON_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(SUBMIT_BUTTON_LOCATOR).click();
         Driver.getDriverInstance().switchTo().frame(Driver.getDriverInstance().findElement(ACTION_FRAME_LOCATOR));
     }
 
     public void clickCancel() {
         Waiters.waitForElementPresent(CANCEL_BUTTON_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(CANCEL_BUTTON_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(CANCEL_BUTTON_LOCATOR).click();
         Driver.getDriverInstance().switchTo().frame(Driver.getDriverInstance().findElement(ACTION_FRAME_LOCATOR));
     }
 
@@ -38,6 +37,6 @@ public class ActionsBlock extends AbstractPage {
 
     public void submitConfirmation(){
         Waiters.waitForElementVisibleEnabled(SUBMIT_BUTTON_IN_FRAME_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(SUBMIT_BUTTON_IN_FRAME_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(SUBMIT_BUTTON_IN_FRAME_LOCATOR).click();
     }
 }

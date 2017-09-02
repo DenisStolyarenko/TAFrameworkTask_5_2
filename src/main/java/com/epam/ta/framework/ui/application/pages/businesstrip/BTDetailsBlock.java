@@ -1,8 +1,7 @@
 package com.epam.ta.framework.ui.application.pages.businesstrip;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
-import com.epam.ta.framework.ui.core.utils.Service;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
@@ -21,14 +20,14 @@ public class BTDetailsBlock extends AbstractPage {
 
     public void inputStartDate(String plannedStartDate){
         Waiters.waitForElementVisibleEnabled(PLANNED_START_DATE_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(PLANNED_START_DATE_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(PLANNED_START_DATE_LOCATOR).click();
         Driver.getDriverInstance().findElement(PLANNED_START_DATE_LOCATOR).clear();
         Driver.getDriverInstance().findElement(PLANNED_START_DATE_LOCATOR).sendKeys(plannedStartDate);
     }
 
     public void inputEndDate(String plannedEndDate){
         Waiters.waitForElementVisibleEnabled(PLANNED_END_DATE_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(PLANNED_END_DATE_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(PLANNED_END_DATE_LOCATOR).click();
         Driver.getDriverInstance().findElement(PLANNED_END_DATE_LOCATOR).clear();
         Driver.getDriverInstance().findElement(PLANNED_END_DATE_LOCATOR).sendKeys(plannedEndDate);
     }
@@ -59,14 +58,14 @@ public class BTDetailsBlock extends AbstractPage {
 
     public BTDetailsBlock selectTicket(){
         if (!Driver.getDriverInstance().findElement(TICKET_LOCATOR).isSelected()) {
-            Service.decorate(Driver.getDriverInstance().findElement(TICKET_LOCATOR)).click();
+            Driver.getDriverInstance().findElement(TICKET_LOCATOR).click();
         }
         return this;
     }
 
     public BTDetailsBlock selectCar(){
         if (!Driver.getDriverInstance().findElement(CAR_LOCATOR).isSelected()) {
-            Service.decorate(Driver.getDriverInstance().findElement(CAR_LOCATOR)).click();
+            Driver.getDriverInstance().findElement(CAR_LOCATOR).click();
         }
         return this;
     }

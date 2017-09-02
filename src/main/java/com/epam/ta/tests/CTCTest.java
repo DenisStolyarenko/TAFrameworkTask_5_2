@@ -1,8 +1,12 @@
 package com.epam.ta.tests;
 
+import com.epam.ta.framework.ui.application.business_objects.BusinessTrip;
+import com.epam.ta.framework.ui.application.business_objects.BusinessTripFactory;
+import com.epam.ta.framework.ui.application.commonconstants.AnyParameters;
 import com.epam.ta.framework.ui.application.enums.ItemType;
 import com.epam.ta.framework.ui.application.steps.businesstrip.BusinessTripStep;
 import com.epam.ta.framework.ui.core.driver.Driver;
+import com.epam.ta.framework.ui.core.utils.DateUtil;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Parameters;
@@ -21,14 +25,15 @@ public class CTCTest {
     @Test(dependsOnMethods = "loginTest", description = "check opening the list of Business Trips")
     @Parameters({"baseUrl"})
     public void openListOfBT(String baseUrl) {
-        Assert.assertEquals(businessTripStep.openList(baseUrl), ItemType.BT.getItemName(), "The section did not found");
+        Assert.assertEquals(businessTripStep.checkingNameOfOpenedItemList(baseUrl), ItemType.BT.getItemName(), "The section did not found");
     }
 
     @Test(dependsOnMethods = "openListOfBT", description = "create new BT")
     @Parameters({"EstimatedBudget"})
     public void createNewBt(String EstimatedBudget){
-        businessTripStep.createBT(Integer.parseInt(EstimatedBudget));
-        Assert.assertTrue(businessTripStep.checkBTid(), "Business Trip is not created");
+        BusinessTrip item = BusinessTripFactory.createBusinessTripForApproveByDifferentLevel(Integer.parseInt(EstimatedBudget));
+        businessTripStep.createBT(item);
+        Assert.assertTrue(businessTripStep.checkingIDOfBusinessTrip(), "Business Trip is not created");
     }
 
     @Test(dependsOnMethods = "createNewBt", description = "submit BT")

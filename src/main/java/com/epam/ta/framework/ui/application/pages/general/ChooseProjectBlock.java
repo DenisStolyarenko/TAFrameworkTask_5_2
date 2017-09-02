@@ -1,7 +1,7 @@
 package com.epam.ta.framework.ui.application.pages.general;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Service;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;

@@ -1,7 +1,7 @@
 package com.epam.ta.framework.ui.core.utils;
 
-import com.epam.ta.framework.ui.core.logger.MyLogger;
 import com.epam.ta.framework.ui.core.driver.Driver;
+import com.epam.ta.framework.ui.core.logger.MyLogger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

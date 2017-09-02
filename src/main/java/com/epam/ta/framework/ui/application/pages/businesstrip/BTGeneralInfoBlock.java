@@ -1,13 +1,13 @@
 package com.epam.ta.framework.ui.application.pages.businesstrip;
 
-import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
 import com.epam.ta.framework.ui.application.pages.general.ChooseProjectBlock;
+import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Service;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
 
-public class BTGeneralInfoBlock extends AbstractPage{
+public class BTGeneralInfoBlock extends AbstractPage {
     private final By SUMMARY_LOCATOR = By.xpath("//input[@name='itemName']");
     private final By ESTIMATE_BUDGET_LOCATOR = By.xpath("//input[@class='textfield textfieldDigit textfieldAmount' and @name='estimatedBudget']");
     private final By BT_CURRENCY_LOCATOR = By.xpath("//input[@id='baseCurrencyStr']");
@@ -18,13 +18,13 @@ public class BTGeneralInfoBlock extends AbstractPage{
 
     public ChooseProjectBlock chooseProject(){
         Waiters.waitForElementEnabled(CHOOSE_PROJECT_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(CHOOSE_PROJECT_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(CHOOSE_PROJECT_LOCATOR).click();
         return new ChooseProjectBlock();
     }
 
     public void clearProject(){
         Waiters.waitForElementEnabled(CLEAR_PROJECT_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(CLEAR_PROJECT_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(CLEAR_PROJECT_LOCATOR).click();
     }
 
     public void inputSummary(String summary){

@@ -16,7 +16,7 @@ public abstract class AbstractPage {
     public void logout(){
         Waiters.waitForElementVisible(LOGOUT_LOCATOR);
         Waiters.waitForElementEnabled(LOGOUT_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(LOGOUT_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(LOGOUT_LOCATOR).click();
     }
 
     public void confirmation(){
