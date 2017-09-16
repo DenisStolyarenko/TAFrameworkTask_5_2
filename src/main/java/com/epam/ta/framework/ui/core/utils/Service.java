@@ -15,7 +15,7 @@ public class Service {
         js.executeScript("arguments[0].style.backgroundColor = '" + bg + "'", element);
     }
 
-    protected static void HighlightOfElement(WebElement element){
+    public static void HighlightOfElement(WebElement element){
         ((JavascriptExecutor) Driver.getDriverInstance()).executeScript("arguments[0].style.border=" + border_3PX_green, element);
     }
 
@@ -23,7 +23,4 @@ public class Service {
         ((JavascriptExecutor) Driver.getDriverInstance()).executeScript("arguments[0].style.backgroundColor = " + border_0PX, element);
     }
 
-    public static DecoratorHighlight decorate(WebElement element){
-        return new DecoratorHighlight(element);
-    }
 }

@@ -2,9 +2,11 @@ package com.epam.ta.framework.ui.application.pages.general;
 
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
 import com.epam.ta.framework.ui.core.driver.Driver;
+import com.epam.ta.framework.ui.core.utils.Decorator;
 import com.epam.ta.framework.ui.core.utils.Service;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class ChooseProjectBlock extends AbstractPage {
     private final String frameLookupDialogName = "frLookupDialog";
@@ -23,14 +25,14 @@ public class ChooseProjectBlock extends AbstractPage {
     public ChooseProjectBlock searchProjectOrCost(String projectName){
         Waiters.waitForElementVisibleEnabled(SEARCH_INPUT_LOCATOR);
         Driver.getDriverInstance().findElement(SEARCH_INPUT_LOCATOR).sendKeys(projectName);
-        Service.decorate(Driver.getDriverInstance().findElement(GO_BUTTON_LOCATOR)).click();
-        Service.decorate(Driver.getDriverInstance().findElement(By.xpath("//input[@type='checkbox' and @projectcostobjectname='" + projectName + "']"))).click();
+        new Decorator(Driver.getDriverInstance().findElement(GO_BUTTON_LOCATOR)).click();
+        Driver.getDriverInstance().findElement(By.xpath("//input[@type='checkbox' and @projectcostobjectname='" + projectName + "']")).click();
         return this;
     }
 
     public void clickByOK (){
         Waiters.waitForElementVisibleEnabled(OK_BUTTON_LOCATOR);
-        Service.decorate(Driver.getDriverInstance().findElement(OK_BUTTON_LOCATOR)).click();
+        new Decorator(Driver.getDriverInstance().findElement(OK_BUTTON_LOCATOR)).click();
     }
 
 }

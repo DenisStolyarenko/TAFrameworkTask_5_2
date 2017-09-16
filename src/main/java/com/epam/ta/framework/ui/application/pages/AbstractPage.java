@@ -1,13 +1,14 @@
 package com.epam.ta.framework.ui.application.pages;
 
 import com.epam.ta.framework.ui.core.driver.Driver;
-import com.epam.ta.framework.ui.core.utils.Service;
+import com.epam.ta.framework.ui.core.utils.Decorator;
 import com.epam.ta.framework.ui.core.utils.Waiters;
 import org.openqa.selenium.By;
 
 public abstract class AbstractPage {
     private final By LOGOUT_LOCATOR = By.xpath("//a[@href='logout.do']");
     private final String ADDITIONAL_URL = "/login.do?logout=true&tz=GMT%2B06:00";
+    public final By GRAY_FORM_LOCKER_LOCATOR = By.id("formLocker");
 
     public void open(String baseUrl){
         Driver.getDriverInstance().get(baseUrl + ADDITIONAL_URL);
@@ -16,7 +17,7 @@ public abstract class AbstractPage {
     public void logout(){
         Waiters.waitForElementVisible(LOGOUT_LOCATOR);
         Waiters.waitForElementEnabled(LOGOUT_LOCATOR);
-        Driver.getDriverInstance().findElement(LOGOUT_LOCATOR).click();
+        new Decorator(Driver.getDriverInstance().findElement(LOGOUT_LOCATOR)).click();
     }
 
     public void confirmation(){

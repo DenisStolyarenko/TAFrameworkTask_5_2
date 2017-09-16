@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import java.util.List;
 
 public class Decorator implements WebElement{
-    protected WebElement component;
+    private WebElement component;
 
     public Decorator(WebElement c){
         component = c;
@@ -24,7 +24,7 @@ public class Decorator implements WebElement{
 
     @Override
     public void sendKeys(CharSequence... charSequences) {
-        component.sendKeys();
+        component.sendKeys(charSequences);
     }
 
     @Override
